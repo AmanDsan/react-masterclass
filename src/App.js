@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import styles from './App.module.css'
 
-function App() {
+export default function App() {
+
+    const greeting = ["Hello", "Hii", "How do you do?","Konnichiwa","Konbanwa", "Good Evening", "Good morning", "Good afternoon"]
+
+    const [msg,setMsg] = useState(0);
+    function handleGreeting(){
+        setMsg((msg+1)%greeting.length)
+    }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className={styles.greet}>
+        <h1>{greeting[msg]}</h1>
 
-export default App;
+        <button onClick={handleGreeting}>Next greeting</button>
+    </div>
+  )
+}
