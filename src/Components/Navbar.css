@@ -1,0 +1,18 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(184, 248, 237);
+    height: 20px;
+    align-items: center;
+  }
+  .nav-container ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .link-tag {
+    color: rgb(58, 55, 55);
+    text-decoration: none;
+  }
